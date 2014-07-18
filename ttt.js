@@ -63,9 +63,60 @@ ticTacToe.controller('tictacController', function ($scope) {
     }    
   };
 
-  $scope.checkForWin = function(x,y) {
-    console.log("Testing to see " + x + " and " + y);
+$scope.checkForWin = function(x,y) {
+  console.log("Testing to see " + x + " and " + y);
 
+};
+
+
+$scope.counterOneZeroFive = 0;
+
+$scope.directionOne = function(array, x, y) {
+  $scope.forLooper1(array, x, y);
+  $scope.directionTwo(array, x, y);
+};
+
+$scope.forLooper1 = function(array, x, y) {
+    for (i = 0; i < array.length; i++) {
+      if (array[i][0] == x - 1 && array[i][1] == y - 1) {
+        $scope.counterOneZeroFive++;
+        console.log("counter is: " + $scope.counterOneZeroFive );
+        a = array[i][0];
+        b = array[i][1];
+        console.log("coordinates to feed:" + x + y); 
+        $scope.forLooper1(array, a, b);
+      } else {
+        console.log("shit aint working");
+      }
+    }
   };
 
-})
+$scope.directionTwo = function(array, x, y) {
+  $scope.forLooper2(array, x, y);
+  $scope.directionThree(array, x, y);
+};
+
+$scope.forLooper2 = function(array, x, y) {
+    for (i = 0; i < array.length; i++) {
+      if (i == x , y - 1) {
+        console.log(x + " " + y + " before redef");
+        y = y - 1;
+        console.log(x + " " + y + " after redef"); 
+        $scope.forLooper2(array, x, y);
+      } else {
+      console.log("shit aint working");
+      }
+    }
+  };
+
+$scope.directionThree = function(array, x, y) {
+  console.log(array + x + y);
+};
+
+
+
+$scope.testArray = [[2,3], [1,2], [3,3], [3,2]];
+
+});
+
+
