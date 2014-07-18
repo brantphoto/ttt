@@ -48,17 +48,24 @@ ticTacToe.controller('tictacController', function ($scope) {
           $scope.pOneCombos.push(tile.x,tile.y);
           console.log($scope.pOneCombos);
           $scope.counterbaby++;
+          $scope.checkForWin(tile.x,tile.y);
       } else {
           tile.active = true;
           tile.playerTwoOwns = true;
           tile.mark = 'X';
-          $scope.pTwoCombos.push(tile.x,tile.y);
+          $scope.pTwoCombos.push([tile.x,tile.y]);
           console.log($scope.pTwoCombos);
           $scope.counterbaby++;
+          $scope.checkForWin(tile.x,tile.y);
       }
     } else {
       alert('Don\'t do it, Bro');
     }    
+  };
+
+  $scope.checkForWin = function(x,y) {
+    console.log("Testing to see " + x + " and " + y);
+
   };
 
 })
