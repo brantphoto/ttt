@@ -70,6 +70,11 @@ $scope.checkForWin = function(x,y) {
 
 
 $scope.counterOneZeroFive = 0;
+$scope.counterTwoZeroSix = 0;
+$scope.counterSevenZeroThree = 0;
+$scope.counterEightZeroFour = 0;
+
+
 
 $scope.directionOne = function(array, x, y) {
   $scope.forLooper1(array, x, y);
@@ -98,25 +103,142 @@ $scope.directionTwo = function(array, x, y) {
 
 $scope.forLooper2 = function(array, x, y) {
     for (i = 0; i < array.length; i++) {
-      if (i == x , y - 1) {
-        console.log(x + " " + y + " before redef");
-        y = y - 1;
-        console.log(x + " " + y + " after redef"); 
-        $scope.forLooper2(array, x, y);
+      if (array[i][0] == x && array[i][1] == y - 1) {
+        $scope.counterTwoZeroSix++;
+        console.log("counter is: " + $scope.counterTwoZeroSix );
+        a = array[i][0];
+        b = array[i][1];
+        console.log("coordinates to feed:" + x + y); 
+        $scope.forLooper2(array, a, b);
       } else {
-      console.log("shit aint working");
+        console.log("shit aint working");
       }
     }
   };
 
 $scope.directionThree = function(array, x, y) {
-  console.log(array + x + y);
+  $scope.forLooper3(array, x, y);
+  $scope.directionFour(array, x, y);
 };
 
+$scope.forLooper3 = function(array, x, y) {
+    for (i = 0; i < array.length; i++) {
+      if (array[i][0] == x + 1 && array[i][1] == y - 1) {
+        $scope.counterSevenZeroThree++;
+        console.log("counter is: " + $scope.counterSevenZeroThree );
+        a = array[i][0];
+        b = array[i][1];
+        console.log("coordinates to feed:" + x + y); 
+        $scope.forLooper3(array, a, b);
+      } else {
+        console.log("shit aint working");
+      }
+    }
+  };
 
+$scope.directionFour = function(array, x, y) {
+  $scope.forLooper4(array, x, y);
+  $scope.directionFive(array, x, y);
+};
 
-$scope.testArray = [[2,3], [1,2], [3,3], [3,2]];
+$scope.forLooper4 = function(array, x, y) {
+    for (i = 0; i < array.length; i++) {
+      if (array[i][0] == x + 1 && array[i][1] == y ) {
+        $scope.counterEightZeroFour++;
+        console.log("counter is: " + $scope.counterEightZeroFour );
+        a = array[i][0];
+        b = array[i][1];
+        console.log("coordinates to feed:" + x + y); 
+        $scope.forLooper4(array, a, b);
+      } else {
+        console.log("shit aint working");
+      }
+    }
+  };
+
+$scope.directionFive = function(array, x, y) {
+  $scope.forLooper5(array, x, y);
+  $scope.directionSix(array, x, y);
+};
+
+$scope.forLooper5 = function(array, x, y) {
+    for (i = 0; i < array.length; i++) {
+      if (array[i][0] == x + 1 && array[i][1] == y + 1 ) {
+        $scope.counterOneZeroFive++;
+        console.log("counter is: " + $scope.counterOneZeroFive );
+        a = array[i][0];
+        b = array[i][1];
+        console.log("coordinates to feed:" + x + y); 
+        $scope.forLooper5(array, a, b);
+      } else {
+        console.log("shit aint working");
+      }
+    }
+};
+
+$scope.directionSix = function(array, x, y) {
+$scope.forLooper6(array, x, y);
+  $scope.directionSeven(array, x, y);
+};
+
+$scope.forLooper6 = function(array, x, y) {
+    for (i = 0; i < array.length; i++) {
+      if (array[i][0] == x && array[i][1] == y + 1 ) {
+        $scope.counterTwoZeroSix++;
+        console.log("counter is: " + $scope.counterTwoZeroSix );
+        a = array[i][0];
+        b = array[i][1];
+        console.log("coordinates to feed:" + x + y); 
+        $scope.forLooper6(array, a, b);
+      } else {
+        console.log("shit aint working");
+      }
+    }
+};
+
+$scope.directionSeven = function(array, x, y) {
+  $scope.forLooper7(array, x, y);
+  $scope.directionEight(array, x, y);
+};
+
+$scope.forLooper7 = function(array, x, y) {
+    for (i = 0; i < array.length; i++) {
+      if (array[i][0] == x - 1 && array[i][1] == y + 1 ) {
+        $scope.counterSevenZeroThree++;
+        console.log("counter is: " + $scope.counterSevenZeroThree );
+        a = array[i][0];
+        b = array[i][1];
+        console.log("coordinates to feed:" + x + y); 
+        $scope.forLooper7(array, a, b);
+      } else {
+        console.log("shit aint working");
+      }
+    }
+};
+
+$scope.directionEight = function(array, x, y) {
+  $scope.forLooper8(array, x, y);
+};
+
+$scope.forLooper8 = function(array, x, y) {
+    for (i = 0; i < array.length; i++) {
+      if (array[i][0] == x - 1 && array[i][1] == y  ) {
+        $scope.counterEightZeroFour++;
+        console.log("counter is: " + $scope.counterEightZeroFour );
+        a = array[i][0];
+        b = array[i][1];
+        console.log("coordinates to feed:" + x + y); 
+        $scope.forLooper8(array, a, b);
+      } else {
+        console.log("shit aint working");
+      }
+    }
+};
+
+$scope.testArray = [[2,4], [1,4]]; // [[2,3], [1,2], [3,3], [3,2], [4,3], [5,2]];
 
 });
+
+
 
 
