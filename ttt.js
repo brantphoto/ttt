@@ -44,7 +44,7 @@ ticTacToe.controller('tictacController', function ($scope) {
     }
   };
 
-  $scope.boardInit(6);
+  $scope.boardInit(7);
 
   $scope.tileMark = function(tile) {
 
@@ -237,7 +237,7 @@ $scope.forLooper8 = function(array, x, y) {
 
 // these timers needed to be set to 1 to include piece clicked on. -Brant
 
-$scope.wc = 3;
+$scope.wc = 4; //win case 
 $scope.counterOneZeroFive = 1;
 $scope.counterTwoZeroSix = 1;
 $scope.counterSevenZeroThree = 1;
