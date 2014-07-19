@@ -235,18 +235,27 @@ $scope.forLooper8 = function(array, x, y) {
     }
 };
 
-$scope.wc = 3;
-$scope.counterOneZeroFive = 0;
-$scope.counterTwoZeroSix = 0;
-$scope.counterSevenZeroThree = 0;
-$scope.counterEightZeroFour = 0;
+// these timers needed to be set to 1 to include piece clicked on. -Brant
 
+$scope.wc = 3;
+$scope.counterOneZeroFive = 1;
+$scope.counterTwoZeroSix = 1;
+$scope.counterSevenZeroThree = 1;
+$scope.counterEightZeroFour = 1;
+
+
+// Needed to reset counters after each click turn. -Brant
 $scope.clickingBox = function(array, x, y) {
   $scope.directionOne(array, x, y);
-  $scope.checkForWin()
+  $scope.checkForWin();
+  $scope.counterOneZeroFive = 1;
+  $scope.counterTwoZeroSix = 1;
+  $scope.counterSevenZeroThree = 1;
+  $scope.counterEightZeroFour = 1;
+
 };
 
-$scope.testArray = [[2,4], [1,4]]; // [[2,3], [1,2], [3,3], [3,2], [4,3], [5,2]];
+// $scope.testArray = [[2,4], [1,4]]; // [[2,3], [1,2], [3,3], [3,2], [4,3], [5,2]];
 
 
 $scope.checkForWin = function() {
