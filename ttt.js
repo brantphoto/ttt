@@ -10,6 +10,14 @@ ticTacToe.controller('tictacController', function ($scope) {
   return (value%2 != 0);
   };
 
+  $scope.whichArray = function(tile) {
+    if (tile.playerOneOwns = true) {
+      return $scope.pOneCombos;
+    } else if (tile.playerTwoOwns = true) {
+      return $scope.pTwoCombos;
+    }
+  };
+
 	$scope.boardInit = function(e) {
 
     $scope.board = [];
@@ -45,10 +53,9 @@ ticTacToe.controller('tictacController', function ($scope) {
           tile.active = true;
           tile.playerOneOwns = true;
           tile.mark = 'X';
-          $scope.pOneCombos.push(tile.x,tile.y);
+          $scope.pOneCombos.push([tile.x,tile.y]);
           console.log($scope.pOneCombos);
           $scope.counterbaby++;
-          $scope.checkForWin(tile.x,tile.y);
       } else {
           tile.active = true;
           tile.playerTwoOwns = true;
@@ -56,7 +63,6 @@ ticTacToe.controller('tictacController', function ($scope) {
           $scope.pTwoCombos.push([tile.x,tile.y]);
           console.log($scope.pTwoCombos);
           $scope.counterbaby++;
-          $scope.checkForWin(tile.x,tile.y);
       }
     } else {
       alert('Don\'t do it, Bro');
@@ -233,6 +239,11 @@ $scope.forLooper8 = function(array, x, y) {
         console.log("shit aint working");
       }
     }
+};
+
+$scope.clickingBox = function(tile, array, x, y) {
+  $scope.tileMark(tile);
+  $scope.directionOne(array, x, y);
 };
 
 $scope.testArray = [[2,4], [1,4]]; // [[2,3], [1,2], [3,3], [3,2], [4,3], [5,2]];
