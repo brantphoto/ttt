@@ -1,0 +1,1 @@
+A note to anyone who's going to be participating in improving this Tic Tac Toe game. I'm making a new branch, Dev, and that's the branch you should fork. Doing this for so many reasons but a big one is just practicing a proper Github opensource workflow. Any suggestions to the workflow just let me know. Cheers, Brant 
