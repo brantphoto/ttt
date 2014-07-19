@@ -11,9 +11,9 @@ ticTacToe.controller('tictacController', function ($scope) {
   };
 
   $scope.whichArray = function(tile) {
-    if (tile.playerOneOwns = true) {
+    if (tile.playerOneOwns == true) {
       return $scope.pOneCombos;
-    } else if (tile.playerTwoOwns = true) {
+    } else if (tile.playerTwoOwns == true) {
       return $scope.pTwoCombos;
     }
   };
@@ -73,12 +73,6 @@ $scope.checkForWin = function(x,y) {
   console.log("Testing to see " + x + " and " + y);
 
 };
-
-
-$scope.counterOneZeroFive = 0;
-$scope.counterTwoZeroSix = 0;
-$scope.counterSevenZeroThree = 0;
-$scope.counterEightZeroFour = 0;
 
 
 
@@ -241,12 +235,44 @@ $scope.forLooper8 = function(array, x, y) {
     }
 };
 
-$scope.clickingBox = function(tile, array, x, y) {
-  $scope.tileMark(tile);
+$scope.wc = 3;
+$scope.counterOneZeroFive = 0;
+$scope.counterTwoZeroSix = 0;
+$scope.counterSevenZeroThree = 0;
+$scope.counterEightZeroFour = 0;
+
+$scope.clickingBox = function(array, x, y) {
   $scope.directionOne(array, x, y);
+  $scope.checkForWin()
 };
 
 $scope.testArray = [[2,4], [1,4]]; // [[2,3], [1,2], [3,3], [3,2], [4,3], [5,2]];
+
+
+$scope.checkForWin = function() {
+  if ($scope.counterOneZeroFive == $scope.wc && $scope.isOdd($scope.counterbaby) == false) {
+    alert("Player One Wins!");
+  } else if ($scope.counterOneZeroFive == $scope.wc && $scope.isOdd($scope.counterbaby) == true) { 
+    alert("Player Two Wins!");
+  } else if ($scope.counterTwoZeroSix == $scope.wc && $scope.isOdd($scope.counterbaby) == false) { 
+    alert("Player One Wins!");
+  } else if ($scope.counterTwoZeroSix == $scope.wc && $scope.isOdd($scope.counterbaby) == true) { 
+    alert("Player Two Wins!");
+  } else if ($scope.counterSevenZeroThree == $scope.wc && $scope.isOdd($scope.counterbaby) == false) { 
+    alert("Player One Wins!");
+  } else if ($scope.counterSevenZeroThree == $scope.wc && $scope.isOdd($scope.counterbaby) == true) { 
+    alert("Player Two Wins!");
+  } else if ($scope.counterEightZeroFour == $scope.wc && $scope.isOdd($scope.counterbaby) == false) { 
+    alert("Player One Wins!");
+  } else if ($scope.counterEightZeroFour == $scope.wc && $scope.isOdd($scope.counterbaby) == true) { 
+    alert("Player Two Wins!");
+  } 
+};
+
+
+
+
+
 
 });
 
