@@ -1,26 +1,25 @@
+img {
+	background-size: 100%;
+}
+
 .board {
 }
 
 .tile {
-	height: 100px;
-	width: 100px;
-	border: 1px solid black;
+	background:url("buttons.png") top left no-repeat; 
+	width:102px; height:103px; background-position:-10px -123px;
 	display: inline-block;
 }
 
 .p1 {
-	height: 100px;
-	width: 100px;
-	border: 1px solid black;
-	background-color: blue;
+	background:url("buttons.png") top left no-repeat;
+	width:102px; height:103px; background-position:-10px -10px;
 	display: inline-block;
 }
 
 .p2 {
-	height: 100px;
-	width: 100px;
-	border: 1px solid black;
-	background-color: green;
+	background:url("buttons.png") top left no-repeat;
+	width:102px; height:103px; background-position:-10px -236px;
 	display: inline-block;
 }
 
