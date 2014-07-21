@@ -2,24 +2,44 @@ img {
 	background-size: 100%;
 }
 
+.graybackground {
+	width: 1040px;
+	height:800px;
+	background-color: #424242;
+}
+
+.container {
+	padding: 20px;
+	height: inherit;
+	width: inherit;
+}
+
+
 .board {
 }
 
+.leftcol {
+	width: 15%;
+	height: 100%;
+	float: left;
+}
+
 .tile {
-	background:url("buttons.png") top left no-repeat; 
-	width:102px; height:103px; background-position:-10px -123px;
+	background:url("buttons2.png") top left no-repeat; 
+	width:76px; height:78px; background-position:-10px -98px;
 	display: inline-block;
+	padding:2px;
 }
 
 .p1 {
-	background:url("buttons.png") top left no-repeat;
-	width:102px; height:103px; background-position:-10px -10px;
+	background:url("buttons2.png") top left no-repeat;
+	width:76px; height:78px; background-position:-10px -10px;
 	display: inline-block;
 }
 
 .p2 {
-	background:url("buttons.png") top left no-repeat;
-	width:102px; height:103px; background-position:-10px -236px;
+	background:url("buttons2.png") top left no-repeat;
+	width:76px; height:78px; background-position:-10px -186px;
 	display: inline-block;
 }
 

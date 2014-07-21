@@ -7,17 +7,42 @@
     <script src="ttt.js"></script>
 </head>
   <body ng-controller="tictacController">
- 	<div class="board" ng-repeat="rows in board">
-
-     <div id="{{ tile.x }}_{{ tile.y }}" ng-class="{ tile: true, p1: tile.playerOneOwns, p2: tile.playerTwoOwns}" ng-repeat="tile in rows" ng-click="tileMark(tile) ; clickingBox(whichArray(tile), tile.x, tile.y)">
-          
-          <div class="mark">
-            x{{ tile.x }}, y{{ tile.y }}
-          </div>
-        
+    <div class="graybackground">
+      <div class="container">
+        <div class = "leftcol">
+          <form action="Board Size">
+            <select name="sizes">
+              <option value="3">3x3</option>
+              <option value="4">4x4</option>
+              <option value="5">5x5</option>
+              <option value="6">6x6</option>
+              <option value="7">7x7</option>
+            </select>
+          </form>
+          <form action="Win Condition">
+            <select name="conditions">
+              <option value="3">3 in a row</option>
+              <option value="4">4 in a row</option>
+              <option value="5">5 in a row</option>
+              <option value="6">6 in a row</option>
+              <option value="7">7 in a row</option>
+            </select>
+          </form>
         </div>
+     	  
+        <div class="board" ng-repeat="rows in board">
 
+          <div id="{{ tile.x }}_{{ tile.y }}" ng-class="{ tile: true, p1: tile.playerOneOwns, p2: tile.playerTwoOwns}" ng-repeat="tile in rows" ng-click="tileMark(tile) ; clickingBox(whichArray(tile), tile.x, tile.y)">
+              
+            <div class="mark">
+                <!--x{{ tile.x }}, y{{ tile.y }} -->
+            </div>
+            
+          </div>
+
+        </div>
       </div>
+    </div>
 
 
   </body>
