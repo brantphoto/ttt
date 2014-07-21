@@ -4,7 +4,37 @@ ticTacToe.controller('tictacController', function ($scope) {
 
   $scope.pOneCombos = [];
   $scope.pTwoCombos = [];
-  $scope.counterbaby = 1;
+  $scope.counterbaby = 1; //odd is player 1, even is player 2
+  
+
+  $scope.boardSizes = [
+      {number:3 , availWinLengths: [3]}, 
+      {number:4 , availWinLengths: [3, 4]}, 
+      {number:5 , availWinLengths: [3, 4, 5]},
+      {number:6 , availWinLengths: [3, 4, 5, 6]}, 
+      {number:7 , availWinLengths: [3, 4, 5, 6, 7]}
+    ];
+
+  $scope.finalBoardSize = $scope.boardSizes[0];
+
+  $scope.possibleWinConditions = [0];
+
+  $scope.finalWinConditions = $scope.possibleWinConditions[0];
+
+  $scope.lockSize = function(array) {
+    x = array
+    $scope.possibleWinConditions = x
+    element = document.getElementById(element);
+  };
+
+  $scope.lockSizeButton = function() {
+    console.log($scope.lockSize($scope.finalBoardSize.availWinLengths));
+  };
+
+   $scope.tester2 = function() {
+    console.log($scope.possibleWinConditions);
+  };
+
 
   $scope.isOdd = function(value) {
   return (value%2 != 0);
@@ -44,7 +74,7 @@ ticTacToe.controller('tictacController', function ($scope) {
     }
   };
 
-  $scope.boardInit(7);
+  //$scope.boardInit($scope.finalBoardSize);
 
   $scope.tileMark = function(tile) {
 
