@@ -2,37 +2,46 @@
 <html ng-app="ticTacToe">
 <head>
 	<link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
     <link rel="stylesheet" href="ttt.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
     <script src="ttt.js"></script>
 </head>
-  <body ng-controller="tictacController">
-    <div class="graybackground">
-      <div class="container">
-        <div class = "leftcol">
-            <select ng-model="finalBoardSize" ng-options="size.number for size in boardSizes">
-            </select>
-              <button ng-click="tester1()"> CONFIRM BOARD SIZE </button>
-            <p>{{size}}</p>
-            <!--<select ng-model="finalWinCondition" ng-options=" condition in finalWinCondition">-->
-            <button ng-click="boardInit(finalBoardSize.number)"> START GAME </button>
-     <!--   <select ng-model="finalWinCondition" ng-options="condition in possibleWinConditions"></select> -->
-            <!-- <button ng-click="tester2()"> CONSOLE PRINT </button> -->
-        </div>
-     	  
-        <div class="board" ng-repeat="rows in board">
+      <body ng-controller="tictacController" class="main-wrapper">
+        <header> </header>
+        <div id="dummy"></div>
+        <div id="element"> 
+          <div class="boarder">
+            <div class="boarder" ng-repeat="rows in board">
 
-          <div id="{{ tile.x }}_{{ tile.y }}" ng-class="{ tile: true, p1: tile.playerOneOwns, p2: tile.playerTwoOwns}" ng-repeat="tile in rows" ng-click="tileMark(tile) ; clickingBox(whichArray(tile), tile.x, tile.y)">
+              <div id="{{ tile.x }}_{{ tile.y }}" ng-class="{ tile: true, p1: tile.playerOneOwns, p2: tile.playerTwoOwns}" ng-repeat="tile in rows" ng-click="tileMark(tile) ; clickingBox(whichArray(tile), tile.x, tile.y)">
               
-            <div class="mark">
-                <!--x{{ tile.x }}, y{{ tile.y }} -->
-            </div>
+                <div class="mark">
+                  <!--x{{ tile.x }}, y{{ tile.y }} -->
+                </div>
             
-          </div>
+              </div>
 
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+        <section class = "leftcolumn move_right">
+          <select ng-model="finalBoardSize" ng-options="size.number for size in boardSizes"></select>
+            <button ng-click="tester1()"> CONFIRM BOARD SIZE </button>
+              <p>{{size}}</p>
+              <!--<select ng-model="finalWinCondition" ng-options=" condition in finalWinCondition">-->
+              <button ng-click="boardInit(finalBoardSize.number)"> START GAME </button>
+              <!--   <select ng-model="finalWinCondition" ng-options="condition in possibleWinConditions"></select> -->
+              <!-- <button ng-click="tester2()"> CONSOLE PRINT </button> -->
+              <div class = "leftcolumnbar move_right"></div>
+        </section>
+        <section class = "boardarea"></section>
+
+
 
   </body>
 </html>
+
+
+
+          

@@ -12,7 +12,13 @@ ticTacToe.controller('tictacController', function ($scope) {
       { number:4 }, 
       { number:5 },
       { number:6 }, 
-      { number:7 }
+      { number:7 },
+      { number: 15},
+      { number: 25},
+      { number: 50},
+      { number: 75},
+      { number: 100},
+      { number: 200}
     ];
 
   $scope.finalBoardSize = $scope.boardSizes[0];
@@ -53,6 +59,7 @@ ticTacToe.controller('tictacController', function ($scope) {
 
 	$scope.boardInit = function(e) {
 
+    console.log="buttontest";
     $scope.board = [];
     
     for (var i = 0 ; i < e; i++) {
@@ -69,6 +76,11 @@ ticTacToe.controller('tictacController', function ($scope) {
             active: false,
             playerOneOwns: false,
             playerTwoOwns: false,
+            boardSize2:false,
+            boardSize3:false, 
+            boardSize4:false,
+            boardsize5:false,
+            boardsize6:false
           }
         );
       }
@@ -76,6 +88,22 @@ ticTacToe.controller('tictacController', function ($scope) {
       $scope.board.push(row);
     }
   };
+
+$scope.chooseTileSize = function(tile, boardsize) {
+  if (boardsize > 10) {
+    tile.boardSize2 = true
+  } else if (boardsize > 9  && boardsize < 20) {
+      tile.boardsize3 = true;
+  } else if (boardsize > 50 && boardsize < 100 ) {
+      tile.boardsize3 = true;
+  } else if (boardsize > 99 && boardsize < 200) {
+    tile.boardsize4 = true;
+  }
+};
+
+
+
+
 
   //$scope.boardInit($scope.finalBoardSize);
 

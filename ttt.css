@@ -1,17 +1,137 @@
-img {
-	background-size: 100%;
+/*
+colors
+ocean: #709FA7;
+turq: #618B7F;
+greansoil: #9FA465;
+lightearth: #EFC487;
+sand: #F4D8B4
+steel: #232B2B
+3B544D
+*/
+
+
+html               { background-color: #618B7F; }
+.main-wrapper      { background-color: #232B2B; }
+.leftcolumn        { background-color: #709FA7; }
+.leftcolumnbar     { background-color: #618B7F; }
+.revealbg          { background-color: #F4D8B4; }
+.secondary-content { background-color: #F4D8B4; }
+.main-footer       { background-color: #F4D8B4; }
+
+
+.main-wrapper {
+	display: inline-block;
+	position:relative;
+	border-radius: 25px;
+	font: normal;
+	color: white;
+	width: 90%;
+	margin: auto;
+	margin: 5%;
 }
 
-.graybackground {
-	width: 1040px;
-	height:800px;
-	background-color: #424242;
+#dummy {
+	margin-top: 50%;
 }
 
-.container {
-	padding: 20px;
+#element {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 90%;
+    padding-left: 10pxs;
+    background-color: #232B2B;
+    border-radius: 21px;
+  }
+
+.boarder {
+	border: 5px dotted #A2E8DA;
+	margin: auto;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	height: 100%;
+	width: 50%;
+	z-index: 2;
+	opacity: .3;
+	border-radius: inherit ;
+
+}
+
+
+.leftcolumn {
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 20%;
 	height: inherit;
-	width: inherit;
+	border-top-left-radius:20px;
+	border-bottom-left-radius:20px;
+	border-top-right-radius:0px;
+	border-bottom-right-radius:0px;
+	transition: all 1s ease;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+}
+
+.leftcolumn:active {
+	border-top-left-radius:0px;
+	border-bottom-left-radius:0px; 
+	border-top-right-radius:20px;
+	border-bottom-right-radius:20px;
+}
+
+.leftcolumnbar {
+	position: absolute;
+	left: 0px;
+	top: 0;
+	bottom: 0;
+	width: 25%;
+	height: inherit;
+	opacity: .2;
+	border-top-left-radius:20px;
+	border-bottom-left-radius:20px;
+	border-top-right-radius:0px;
+	border-bottom-right-radius:0px;
+	transition: all 1s ease;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+}
+
+.leftcolumnbar:active {
+	border-top-left-radius:0px;
+	border-bottom-left-radius:0px; 
+	border-top-right-radius:20px;
+	border-bottom-right-radius:20px;
+}
+
+
+.move_right:active {
+	left:80.5%;
+} 
+
+
+
+
+/* clearfix */
+
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+.group {
+  zoom: 1;
 }
 
 
@@ -25,10 +145,42 @@ img {
 }
 
 .tile {
-	background:url("buttons2.png") top left no-repeat; 
-	width:76px; height:78px; background-position:-10px -98px;
-	display: inline-block;
-	padding:2px;
+/* Firefox v3.6+ */
+/* Firefox v3.6+ */
+background-image:-moz-radial-gradient(50% 50%,circle closest-side,rgb(255,255,255) 0%,rgb(255,255,255) 4%,rgb(231,231,231) 51%,rgb(203,203,203) 100%); 
+/* Safari v4.0+ and by Chrome v3.0+ */
+background-image:-webkit-gradient(radial,50% 50%,0,50% 50%,105,color-stop(0, rgb(255,255,255)),color-stop(0.04, rgb(255,255,255)),color-stop(0.51, rgb(231,231,231)),color-stop(1, rgb(203,203,203)));
+/* Safari v6.0+ and by Chrome v10.0+ */
+background-image:-webkit-radial-gradient(50% 50%,circle closest-side, rgb(255,255,255) 0%,rgb(255,255,255) 4%,rgb(231,231,231) 51%,rgb(203,203,203) 100%);
+/* IE v10+ */
+background-image:-ms-radial-gradient(50% 50%,circle closest-side, rgb(255,255,255) 0%,rgb(255,255,255) 4%,rgb(231,231,231) 51%,rgb(203,203,203) 100%);
+background-image:radial-gradient(50% 50%,circle closest-side, rgb(255,255,255) 0%,rgb(255,255,255) 4%,rgb(231,231,231) 51%,rgb(203,203,203) 100%);
+width:40px;
+height:40px;
+margin-right: 6px;
+display: inline-block;
+/* Firefox v1.0+ */
+-moz-border-radius:7%;
+/* Safari v3.0+ and by Chrome v0.2+ */
+-webkit-border-radius:7%/7%;
+/* Firefox v4.0+ , Safari v5.0+ , Chrome v4.0+ , Opera v10.5+  and by IE v9.0+ */
+border-radius:7%/7%;
+-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Style=2)";
+filter:progid:DXImageTransform.Microsoft.Alpha(Style=2);
+}
+
+
+.boardsize2 {
+	width:76px; 
+	height:78px
+}
+
+.boardsize3 {
+
+}
+
+.boardsize4 {
+
 }
 
 .p1 {
@@ -42,5 +194,6 @@ img {
 	width:76px; height:78px; background-position:-10px -186px;
 	display: inline-block;
 }
+
 
 
