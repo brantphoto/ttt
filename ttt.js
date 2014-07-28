@@ -38,12 +38,12 @@ ticTacToe.controller('tictacController', function ($scope) {
     $scope.lockSizeButton = function() {
     console.log($scope.lockSize($scope.finalBoardSize.availWinLengths));
   };
+*/
 
-   $scope.tester2 = function() {
-    console.log($scope.possibleWinConditions);
+   $scope.tester1 = function() {
+    console.log(possibleWinConditions);
   };
   
-  */
 
   $scope.isOdd = function(value) {
   return (value%2 != 0);
@@ -59,7 +59,6 @@ ticTacToe.controller('tictacController', function ($scope) {
 
 	$scope.boardInit = function(e) {
 
-    console.log="buttontest";
     $scope.board = [];
     
     for (var i = 0 ; i < e; i++) {
@@ -115,14 +114,12 @@ $scope.chooseTileSize = function(tile, boardsize) {
           tile.playerOneOwns = true;
           tile.mark = 'X';
           $scope.pOneCombos.push([tile.x,tile.y]);
-          console.log($scope.pOneCombos);
           $scope.counterbaby++;
       } else {
           tile.active = true;
           tile.playerTwoOwns = true;
           tile.mark = 'X';
           $scope.pTwoCombos.push([tile.x,tile.y]);
-          console.log($scope.pTwoCombos);
           $scope.counterbaby++;
       }
     } else {
@@ -141,7 +138,7 @@ $scope.testArray = [[9,9], [11, 11], [10, 11], [10, 9], [11, 9], [9, 11], [9, 10
 
 
 // Needed to reset counters after each click turn. -Brant
-$scope.clickingBox = function(array, x, y) {
+  $scope.clickingBox = function(array, x, y) {
   $scope.pointDirection(array, x, y, $scope.arraydir);
   $scope.checkForWin($scope.directionarray);
   console.log($scope.directionarray);
@@ -169,8 +166,6 @@ $scope.pointDirection = function (array, x, y, arraydir) {
         b = array[i][1];
         console.log("new coordinates:" + a + b );
         $scope.searchDirectionLoop(array, a, b, direction);
-      } else {
-        console.log("moved on to Next Loop");
       }   
     }
   };
@@ -180,12 +175,12 @@ $scope.pointDirection = function (array, x, y, arraydir) {
 
 $scope.checkForWin = function(directionarray) {
   for (i = 0; i < directionarray.length; i++) {
-    if (directionarray[i] == $scope.wc && $scope.isOdd($scope.counterbaby) == true) { 
+    if (directionarray[i] === $scope.wc && $scope.isOdd($scope.counterbaby) == true) { 
       alert("Player Two Wins!");
-    } else if (directionarray[i] == $scope.wc && $scope.isOdd($scope.counterbaby) == false) { 
+    } else if (directionarray[i] === $scope.wc && $scope.isOdd($scope.counterbaby) == false) { 
       alert("Player One Wins!");
     } else if ($scope.counterbaby === ($scope.finalBoardSize.number * $scope.finalBoardSize.number) + 1) {
-      alert("It's a tie!")
+      alert("It's a tie!");
     }
   }
 };

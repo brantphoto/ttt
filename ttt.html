@@ -12,7 +12,7 @@
         <div id="dummy"></div>
         <div id="element"> 
           <div class="boarder">
-            <div class="boarder" ng-repeat="rows in board">
+            <div class="boardy" ng-repeat="rows in board">
 
               <div id="{{ tile.x }}_{{ tile.y }}" ng-class="{ tile: true, p1: tile.playerOneOwns, p2: tile.playerTwoOwns}" ng-repeat="tile in rows" ng-click="tileMark(tile) ; clickingBox(whichArray(tile), tile.x, tile.y)">
               
